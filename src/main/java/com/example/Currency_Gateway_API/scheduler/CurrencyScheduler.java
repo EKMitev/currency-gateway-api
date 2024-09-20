@@ -11,8 +11,8 @@ public class CurrencyScheduler {
     @Autowired
     private CurrencyService currencyService;
 
-   // @Scheduled(cron = "0 0 * * * *")
-    @Scheduled(cron = "0 * * * * *")
+   // @Scheduled(cron = "0 * * * * *") // every minute for testing
+    @Scheduled(cron = "0 0 4 * * *")
     public void scheduleCurrencyDataFetch() {
         currencyService.fetchAndStoreCurrencyData();
     }
